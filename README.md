@@ -1,5 +1,7 @@
 ## Delex: Combining Multiple Strategies for Blocking for Entity Matching
 
+Maintained by MadMatcher LLC. See [FORK_NOTES.md](FORK_NOTES.md) for provenance details.
+
 Delex is an open-source tool for the blocking step of entity matching. For more details on entity matching, see [this page](https://anhaidgroup.github.io/magellan/about). Delex is distinguished in the following aspects: 
 * It enables using multiple strategies to perform blocking. 
 * It uses Spark to scale to large tables, for example, with tens of millions or hundreds of millions of tuples per table. 
@@ -8,7 +10,7 @@ Delex is still in beta testing, and we are looking for users who want to use it 
 
 ### Motivation and Comparison with Sparkly
 
-Initially we developed [Sparkly](https://github.com/anhaidgroup/sparkly), a simpler blocking solution that uses TF/IDF. We found that Sparkly [outperforms](https://pages.cs.wisc.edu/~anhai/papers1/sparkly-vldb2023.pdf) many state-of-the-art blocking solutions. *If you are looking for a solution to perform blocking, we highly recommend trying Sparkly first, to see if it is already sufficient for your problem.* 
+Initially we developed [Sparkly](https://github.com/MadMatcher/sparkly), a simpler blocking solution that uses TF/IDF. We found that Sparkly [outperforms](https://pages.cs.wisc.edu/~anhai/papers1/sparkly-vldb2023.pdf) many state-of-the-art blocking solutions. *If you are looking for a solution to perform blocking, we highly recommend trying Sparkly first, to see if it is already sufficient for your problem.* 
 
 Sparkly uses only *one* blocking strategy, namely finding top-k candidate matches using the TF/IDF similarity score. While working with Sparkly, we observed that in some cases the user wants to use *multiple* blocking strategies. 
 
@@ -47,4 +49,4 @@ See [this page](https://github.com/anhaidgroup/delex/blob/main/doc/using-delex.m
 ### Further Pointers
 
 See [API documentation](https://anhaidgroup.github.io/delex). 
-For questions / comments, contact [our research group](mailto:entitymatchinginfo@gmail.com).
+For questions / comments, contact [MadMatcher](mailto:dev@hellomadmatcher.com).
