@@ -96,10 +96,15 @@ class TestMemmapSortedSets:
 
         assert len(scores) == 2
         assert isinstance(scores, np.ndarray)
+        # query {2,3} is fully contained in both sets {1,2,3} and {2,3,4}, so
+        # overlap_coeff = |intersection| / min(|query|, |set|) = 2 / 2 = 1.0
+        np.testing.assert_allclose(scores, [1.0, 1.0])
 
         ids2 = np.array([999], dtype=np.int64)
         scores2 = sorted_sets.overlap_coeff(query, ids2)
-        assert scores2[0] == 0.0
+        # 999 is not in the token sets, so the score is np.nan per the
+        # overlap_coeff contract (matches the jaccard test above).
+        assert np.isnan(scores2[0])
 
         sorted_sets.deinit()
         sorted_sets.delete()

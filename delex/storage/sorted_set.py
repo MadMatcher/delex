@@ -134,13 +134,6 @@ def _overlap_coeff(offsets, sets, query, indexes):
                 olap = sorted_set_overlap(query, sets[start:end])
                 scores[i] =  olap / min(len(query), (end - start))
 
-    scores = np.empty(len(indexes), dtype=np.float32)
-    for i in range(len(indexes)):
-        start = offsets[indexes[i]]
-        end = offsets[indexes[i] + 1]
-
-        olap = sorted_set_overlap(query, sets[start:end])
-
     return scores
 
 @nb.njit(**njit_kwargs)
