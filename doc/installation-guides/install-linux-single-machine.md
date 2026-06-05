@@ -1,6 +1,6 @@
 ## How to Install Delex on a Linux Machine
 
-This is a step-by-step guide to install Delex on a single Linux machine. This guide has been tested on a Linux machine running Ubuntu 22.04 with 8 GB memory, using Python 3.10, Java Temurin 17 JDK, and PyLucene 9.4.1. You can try to adapt this guide to other configurations.
+This is a step-by-step guide to install Delex on a single Linux machine. This guide has been tested on a Linux machine running Ubuntu 22.04 with 8 GB memory, using Python 3.12, Java Temurin 17 JDK, and PyLucene 9.12.0. You can try to adapt this guide to other configurations.
 
 ### Step 1: Installing Sparkly
 

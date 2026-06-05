@@ -1,16 +1,23 @@
+# Runtime dependencies for delex.
+# Shared scientific/Spark deps are PINNED to exact versions so that installing
+# sparkly, delex, and MatchFlow into the same environment always resolves to one
+# mutually-tested set (no version drift between the packages). These pins match
+# the repo-root constraints.txt. sparkly is the sibling package (>= its current
+# version).
+#
+# Also requires PyLucene (Java/JCC build, not pip-installable) — see doc/install-*.md.
 joblib==1.2.0
 matplotlib==3.7.3
 networkx==3.1
 numba==0.60.0
 numpy==1.26.0
-pandas>=1.5.2
-psutil==5.9.0
-py_stringmatching>=0.4.6
+pandas==2.2.3
+py_stringmatching==0.4.7
 pyarrow==14.0.0
 pydantic==2.11.1
 pydot==3.0.4
 pyspark==3.5.3
 scipy==1.15.2
-sparkly-em==0.1.0
+sparkly>=0.1.0
 tqdm==4.64.1
 xxhash==3.2.0
